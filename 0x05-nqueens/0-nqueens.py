@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-"""N queens solution finder module.
-"""
 import sys
 
 def is_safe(board, row, col, n):
@@ -20,10 +18,10 @@ def solve_n_queens(n, row, board, solutions):
 
 def print_solutions(solutions, n):
     for solution in solutions:
-        print([list(enumerate([i for i, x in enumerate(row) if x == 1])) for row in [[1 if i == x else 0 for i in range(n)] for x in solution]])
+        print([[i, x] for i, x in enumerate(solution)])
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv)!= 2:
         print("Usage: nqueens N")
         sys.exit(1)
     try:
